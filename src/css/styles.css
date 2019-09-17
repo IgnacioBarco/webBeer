@@ -1,0 +1,13 @@
+:root {
+  /*navbar*/
+  --navbar-text-color: white;
+  --navbar-bg-color: black;
+
+  /*main*/
+  --main-text-color: black ;
+  --main-bg-color: white;
+
+  /*footer*/
+  --footer-text-color: white;
+  --footer-bg-color: black;
+}

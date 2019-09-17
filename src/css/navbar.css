@@ -1,0 +1,7 @@
+.navbar {
+  position: fixed;
+  height: 10vw;
+  width: 100%;
+  background-color: var(--navbar-bg-color);
+  color: var(--navbar-text-color);
+}
