@@ -1,0 +1,23 @@
+{
+  "name": "tarea",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "./node_modules/.bin/http-server . -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgnacioBarco/webBeer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgnacioBarco/webBeer/issues"
+  },
+  "homepage": "https://github.com/IgnacioBarco/webBeer#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
