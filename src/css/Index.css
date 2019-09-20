@@ -1,0 +1,13 @@
+.main {
+    padding-top: 10vw;
+    height: 15vw;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+.detail-section {
+    display: flex;
+    flex-direction: column;
+    height: 15vw;
+    color: var(--main-text-color);
+}

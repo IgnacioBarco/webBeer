@@ -5,23 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>WeBbEeR</title>
-    <link rel="stylesheet" href="./src/css/reset.css" />
-    <link rel="stylesheet" href="./src/css/styles.css  " />
-    <link rel="stylesheet" href="./src/css/navbar.css" />
-    <link rel="stylesheet" href="./src/css/mainIndex.css" />
-    <link rel="stylesheet" href="./src/css/footer.css" />
+    <link rel="stylesheet" href="/src/css/reset.css" />
+    <link rel="stylesheet" href="/src/css/styles.css  " />
+    <link rel="stylesheet" href="/src/css/navbar.css" />
+    <link rel="stylesheet" href="/src/css/Index.css" />
+    <link rel="stylesheet" href="/src/css/footer.css" />
   </head>
   <body>
     <nav class="navbar">
-      <div class="aaa">WeBbEeR</div>
+      <div class="navbar-logo">Logo WeBbEeR</div>
+      <div class="navbar-filter">
+        <form class="search-form" action="submit">
+          <div>
+            <div class="filterText">
+              <input type="text" name="filterText" id="filterText" />
+            </div>
+
+            <div class="filterDate">
+              <input type="date" name="filterDate" id="filterDate" />
+            </div>
+            <button type="submit" class="button-search">Buscar</button>
+          </div>
+        </form>
+      </div>
     </nav>
 
     <main class="main">
-        <div class="imagen">imagen</div>
+      <div class="imagen">imagen</div>
+      <div class="beerList">Lista cervezas</div>
     </main>
+
+    <section class="detail-section">detalles</section>
 
     <footer class="footer">
       <div class="bbb">Footer</div>
     </footer>
+
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <script type="module" src="/src/js/routes.js"></script>
   </body>
 </html>
