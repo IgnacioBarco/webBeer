@@ -1,15 +1,24 @@
 
-const templateShow = `
-    <div class="name">a</div>
-    <div class="description">a</div>
-    <div class="image">a</div>
-    <div class="ingredients">a</div>
-    <div class="firstBrewed">a</div>
-    <div class="brewersTips">a</div>
-    <div class="contributedBy">a</div>
-    <div class="likes">a</div>
-    <div class="comments">
-        <div class="comment">a</div>
-        <div class="dateComment">a</div>
-    </div>
+import api from './api.js';
+
+const templateShow = ({ beerId, brewersTips, comments, contributedBy, description, firstBrewed,
+    image, ingredients, likes, name, price }) =>
+    ` 
+      <h2>${name}</h2>
+      <h3>${brewersTips}</h3>
+      <h3>${contributedBy}</h3>
+      <h3>${description}</h3>
+      <h3>${firstBrewed}</h3>
+      <img src =${image}>
+      <h3>${ingredients}</h3>
+      <h3>${price}</h3>
+      <h3>${comments}</h3>
+      <h3>${likes}</h3>
+    
 `;
+
+const mainSection = document.querySelector('main');
+
+const renderDetail = data => mainSection.innerHTML = templateShow(data);
+
+export { renderDetail };

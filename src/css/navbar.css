@@ -1,6 +1,6 @@
 .navbar {
   position: fixed;
-  height: 10vw;
+  height: 15vh;
   width: 100%;
   background-color: var(--navbar-bg-color);
   color: var(--navbar-text-color);

@@ -6,30 +6,28 @@
 import navbar from './navbar.js';
 import api from './api.js';
 import { renderList } from './showList.js';
+import { renderDetail } from './showDetails.js';
 
 const { getBeers } = api();
+const { getDetails } = api();
 
 page('/', async () => {
-    console.log('home');
+    console.log('página home');
 
     const data = await getBeers();
-    // const data = resultados();
-    //const data = await getBeers();
-
     renderList(data);
 
-    console.log(data[1]);
-    
- 
+});
 
 
+page('/detail/:id', async ctx => {
+    console.log('página detail');
+
+    const { params: { id } } = ctx;
+    const detail = await getDetails(id);
+    renderDetail(detail);
 
 });
 
-page('/detail/:id', ctx => {
-    console.log('detail ' + ctx);
-});
-
-const api2 = api;
 page();
 

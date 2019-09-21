@@ -1,13 +1,37 @@
-.main {
-    padding-top: 10vw;
-    height: 15vw;
-    background-color: var(--main-bg-color);
-    color: var(--main-text-color);
+.main-section {
+  padding-top: 15vh;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
 }
 
-.detail-section {
-    display: flex;
-    flex-direction: column;
-    height: 15vw;
-    color: var(--main-text-color);
+.beerCard {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: gray;
 }
+.imageBeer,
+.img {
+  width: 11.5vh;
+  height: 27vh;
+}
+
+.beerCardDetail {
+  display: flex;
+  text-decoration: none;
+}
+
+.textCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.textBeer h3 {
+  color: black;  
+  padding: 0.5rem;
+}
+
+/*
+
+*/
+
+

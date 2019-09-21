@@ -1,8 +1,5 @@
 .footer {
   display: flex;
-  padding: 1vw;
-  height: 10vw;
-  width: 100%;
   background-color: var(--footer-bg-color);
   color: var(--footer-text-color);
 }

@@ -1,8 +1,0 @@
-.main {
-    display: flex;
-    flex-direction: column;
-    padding-top: 10vw;
-    height: 150vw;
-    background-color: var(--main-bg-color);
-    color: var(--main-text-color);
-}
