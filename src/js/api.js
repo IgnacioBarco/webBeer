@@ -4,10 +4,10 @@ const API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1
 const LIST_ALL = '/beers';
 const LIMIT = '&limit=10';
 const DETAIL = '/beers/';
-const FiLTER_TEXT = '/beers/search=';
+const FiLTER_TEXT = '/beers/?search=';
 
 const api = () => {
-    // const searchBeers 
+
     return {
         getBeers: async () => {
 
@@ -81,14 +81,14 @@ const api = () => {
                     throw new Error('Error fetching')
                 }
 
-                const dataDetails = await response.json();
-                const { success, beer } = dataDetails;
+                const dataFilterByText = await response.json();
+                const { success, beers } = dataFilterByText;
 
                 if (success === false) {
                     return "no hay ninguna cerveza con ese id";
                 }
 
-                return beer;
+                return beers;
 
             } catch (err) {
                 console.error('error: ' + err);

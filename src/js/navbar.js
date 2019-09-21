@@ -5,22 +5,16 @@ const searchForm = document.querySelector('.search-form');
 const searchInput = document.querySelector('#filterText');
 
 const { filterByText } = api();
+import { renderList } from './showList.js';
 
 
-searchForm.addEventListener('submit', evt => {
+searchForm.addEventListener('submit', async evt => {
   evt.preventDefault();
   if (searchInput.validity.valid) {
-    //   render shows
-    //   setItem('navbar-input', searchInput.value);
-    //   renderShowsDOM(searchInput.value);
-    console.log("buscando..." + searchInput.value);
 
-    console.log('buscando por filtro');
-
-
-    // const data = await filerByText(searchInput.value);
-
-    // renderList(data);
+    const data = await filterByText(searchInput.value);
+    renderList(data);
+    
   }
 });
 
