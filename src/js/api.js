@@ -8,23 +8,26 @@ const LIKE = '/like';
 const FiLTER_TEXT = '/beers/?search=';
 
 const api = () => {
-
     return {
+        //devuelve la lista de todas las cervezas
         getBeers: async () => {
-
             try {
                 const response = await fetch(`${API_URL}${LIST_ALL}`, {
                     method: 'GET',
                     headers: {
                         'Content-type': 'application/json',
                         'X-API-KEY': API_KEY
+
                     }
                 });
                 if (!response.ok) {
                     throw new Error('Error fetching')
+
                 }
 
                 const data = await response.json();
+                
+                //nos quedamos solo con las cervezas
                 const { success, beers } = data;
 
                 if (success === false) {
@@ -36,9 +39,11 @@ const api = () => {
             } catch (err) {
                 console.error('error: ' + err);
                 throw err;
+
             }
         },
 
+        //devuelve los detalles de una cerveza, hay que pasarle el id 
         getDetails: async (id) => {
 
             try {
@@ -47,8 +52,10 @@ const api = () => {
                     headers: {
                         'Content-type': 'application/json',
                         'X-API-KEY': API_KEY
+
                     }
                 });
+
                 if (!response.ok) {
                     throw new Error('Error fetching')
                 }
@@ -83,6 +90,8 @@ const api = () => {
                 }
 
                 const dataFilterByText = await response.json();
+
+                //nos quedamos solo con los detalles de la cerveza
                 const { success, beers } = dataFilterByText;
 
                 if (success === false) {
@@ -97,36 +106,33 @@ const api = () => {
             }
         },
 
+        //añade un like y recarga la página
         addLike: async (id) => {
-
             try {
                 const response = await fetch(`${API_URL}${DETAIL}${id}${LIKE}`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json',
                         'X-API-KEY': API_KEY
+
                     }
                 });
+
                 if (!response.ok) {
                     throw new Error('Error fetching')
                 }
 
-                const buttonLike = document.querySelector('.button-like');
-
+                //recargamos la página
                 location.reload();
 
             } catch (err) {
                 console.error('error: ' + err);
                 throw err;
+
             }
         }
 
     }
 };
-
-
-
-
-
 
 export default api;

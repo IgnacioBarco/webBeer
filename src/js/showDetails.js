@@ -41,16 +41,7 @@ const templateShow = ({ beerId, brewersTips, comments, contributedBy, descriptio
 
 const mainSection = document.querySelector('main');
 
+//pinta los detalles de la cerveza que le hemos pasado
 const renderDetail = data => mainSection.innerHTML = templateShow(data);
-
-// const buttonLike =  document.querySelector('.button-like');
-
-// buttonLike.addEventListener('click', async evt => {
-//   //await addLike();
-//   // await 
-//   evt.preventDefault();
-//   console.log('add like');
-// });
-
 
 export { renderDetail };
