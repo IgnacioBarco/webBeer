@@ -4,6 +4,8 @@ La parte del HTML y CSS no me ha dado tiempo a mejorarla, está muy básica.
 He añadido la función del like, pero del comment no he podido.
 La página de inicio la he dejado que liste todas las cervezas, y cuando hace la busqueda por
     filtro la he limitado a 10 resultados.
+El filtro de la fecha esta hecho seleccionando el mes y año, ignora el dia. Y solo saca los
+    que coinciden con la fecha.    
 
 
 
