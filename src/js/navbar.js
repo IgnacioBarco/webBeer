@@ -16,64 +16,92 @@ navbarLogo.addEventListener('click', async evt => {
 });
 
 searchForm.addEventListener('submit', async evt => {
+
   evt.preventDefault();
+
   if (searchInputText.validity.valid) {
+    var text = false;
+    var resultsText = false;
+    var date = false;
+    var resultsDate = false;
 
-    if (searchInputText.value.length !== 0 || searchInputDate.value.length !== 0) {
+    if (searchInputText.value.length !== 0) {
+      text = true;
+    }
 
-      console.log('Texto: ' + searchInputText.value);
-      console.log('Date: ' + searchInputDate.value);
+    if (searchInputDate.value.length !== 0) {
+      date = true;
+    }
 
-      var text = false;
-      var date = false;
+    if (text || date) {
       var data = {};
       var dataFilterByDate = [];
 
 
-      if (searchInputText.value.length !== 0) {
-        text = true;
+      if (text) {
         data = await filterByText(searchInputText.value);
+
+        if (data.length === 0) {
+          resultsText = false;
+
+        } else {
+          resultsText = true;
+
+        }
+
       } else {
         data = await getBeers();
+        resultsText = true;
+
       }
 
-
-
-      if (searchInputDate.value.length !== 0) {
-        date = true;
+      if (date) {
         var aux = searchInputDate.value;
         var formatDate = `${aux[5]}${aux[6]}/${aux[0]}${aux[1]}${aux[2]}${aux[3]}`
 
-        data.map(item => {
+        console.log(formatDate);
 
+        data.map(item => {
           if ((item.firstBrewed === formatDate)) {
             dataFilterByDate.push(item);
           }
+
         });
+
+        if (dataFilterByDate.length === 0) {
+          resultsDate = false;
+
+        } else {
+          resultsDate = true;
+
+        }
 
       }
 
-      console.log(dataFilterByDate.length);
+      if (text && resultsText && !date) {
+        renderListLimited(data);
 
-
-      if (dataFilterByDate.length === 0 && date) {
-        renderListNoResults();
-
-      } else if (dataFilterByDate.length > 0) {
+      } else if (resultsText && date && resultsDate) {
         renderListLimited(dataFilterByDate);
 
       } else {
-        renderListLimited(data);
+        renderListNoResults();
 
       }
 
-
     } else {
-
-      console.log('navegar a index');
+      alert('no hay filtros activos');
 
     }
+
+
+    console.log('Texto: ' + text);
+    console.log('Date: ' + date);
+    console.log('resultsText: ' + resultsText);
+    console.log('resultsDate: ' + resultsDate);
   }
+
+
 });
 
 export default searchForm;
