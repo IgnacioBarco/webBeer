@@ -27,7 +27,11 @@ const templateShow = ({ beerId, brewersTips, comments, contributedBy, descriptio
           </ol>
       </ul>  
       <li><h3>Precio: ${price}€</h3></li>
-      <li><h3>Me gusta: ${likes} likes</h3></li>
+      <li>
+        <h3>Me gusta: ${likes} likes
+          <button type="submit" class="button-like">Dar Like</button>
+        </h3>
+      </li>
       <li><h3>Autor de la reseña: ${contributedBy}</h3></li>
       <li><h3>Comentarios: ${comments}</h3></li>
     </ul>  
@@ -38,5 +42,15 @@ const templateShow = ({ beerId, brewersTips, comments, contributedBy, descriptio
 const mainSection = document.querySelector('main');
 
 const renderDetail = data => mainSection.innerHTML = templateShow(data);
+
+// const buttonLike =  document.querySelector('.button-like');
+
+// buttonLike.addEventListener('click', async evt => {
+//   //await addLike();
+//   // await 
+//   evt.preventDefault();
+//   console.log('add like');
+// });
+
 
 export { renderDetail };

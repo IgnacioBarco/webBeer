@@ -4,6 +4,7 @@ const API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1
 const LIST_ALL = '/beers';
 const LIMIT = '&limit=10';
 const DETAIL = '/beers/';
+const LIKE = '/like';
 const FiLTER_TEXT = '/beers/?search=';
 
 const api = () => {
@@ -95,6 +96,30 @@ const api = () => {
                 throw err;
             }
         },
+
+        addLike: async (id) => {
+
+            try {
+                const response = await fetch(`${API_URL}${DETAIL}${id}${LIKE}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json',
+                        'X-API-KEY': API_KEY
+                    }
+                });
+                if (!response.ok) {
+                    throw new Error('Error fetching')
+                }
+
+                const buttonLike = document.querySelector('.button-like');
+
+                location.reload();
+
+            } catch (err) {
+                console.error('error: ' + err);
+                throw err;
+            }
+        }
 
     }
 };

@@ -11,9 +11,8 @@ const { getBeers } = api();
 const { filterByText } = api();
 
 navbarLogo.addEventListener('click', async evt => {
-  console.log('click');
-  const home = await getBeers();
-  renderList(home);
+  location.assign("/");
+
 });
 
 searchForm.addEventListener('submit', async evt => {

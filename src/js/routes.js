@@ -10,6 +10,7 @@ import { renderDetail } from './showDetails.js';
 
 const { getBeers } = api();
 const { getDetails } = api();
+const { addLike } = api();
 
 page('/', async () => {
     console.log('página home');
@@ -26,6 +27,14 @@ page('/detail/:id', async ctx => {
     const { params: { id } } = ctx;
     const detail = await getDetails(id);
     renderDetail(detail);
+
+    const buttonLike = document.querySelector('.button-like');
+    buttonLike.addEventListener('click', async evt => {
+        evt.preventDefault();
+        await addLike(id);
+        console.log('add like');
+        
+    });
 
 });
 

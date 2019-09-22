@@ -10,3 +10,8 @@ npm i --save-dev http-server
  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
 
  npm i --save express
+
+doc API:
+    https://web-bootcamp-exercise-beer-swagger-pgjtqotgtl.now.sh/api-docs/#/Beer/get_beers
+
+
