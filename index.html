@@ -14,7 +14,9 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="navbar-logo">Logo WeBbEeR</div>
+      <div class="navbar-logo">
+        <a href="/">Logo WeBbEeR</a>
+      </div>
       <div class="navbar-filter">
         <form class="search-form" action="submit">
           <div>
@@ -32,7 +34,18 @@
     </nav>
 
     <main class="main-section">
-      <div class="imagen"></div>
+      <picture>
+        <source
+          srcset="
+            ./src/images/beer640.jpg   400w,
+            ./src/images/beer1280.jpg  800w,
+            ./src/images/beer1920.jpg 1600w
+          "
+          media="(min-width: 640px)"
+        />
+        <img class="imagen" src="./src/images/beer640.jpg" alt="beer" />
+      </picture>
+
       <div class="beerList"></div>
     </main>
 

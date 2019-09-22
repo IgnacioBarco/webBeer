@@ -23,16 +23,33 @@ const templateShow = ({ beerId, brewersTips, comments, contributedBy, descriptio
     
 `;
 
-const mainSection = document.querySelector('.main-section');
+const beerList = document.querySelector('.beerList');
 
 const renderList = (data) => {
 
-  mainSection.innerHTML = '';
+  beerList.innerHTML = '';
   const formatData = data.map(elem => {
-    mainSection.innerHTML += templateShow(elem);
+    beerList.innerHTML += templateShow(elem);
   })
 
 };
 
+const renderListLimited = (data) => {
 
-export { renderList };
+  beerList.innerHTML = '';
+  const formatData = data
+    .slice(0, 10)
+    .map(elem => {
+      beerList.innerHTML += templateShow(elem);
+    })
+
+}
+
+const renderListNoResults = () => {
+
+  beerList.innerHTML = `<h1 class="no-results">No hay resultados</h1>`;
+  
+}
+
+
+export { renderList, renderListLimited, renderListNoResults };
