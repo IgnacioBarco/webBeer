@@ -33,7 +33,7 @@ searchForm.addEventListener('submit', async evt => {
 
     //Guardamos el texto de los formularios en localstorage
     locStorage.setItem('filterText', searchInputText.value);
-    locStorage.setItem('filterText', searchInputText.value);
+    locStorage.setItem('filterDate', searchInputDate.value);
     
     if (searchInputText.value.length !== 0) {
       text = true;

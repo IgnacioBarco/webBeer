@@ -14,16 +14,18 @@ const templateShow = ({ beerId, brewersTips, comments, contributedBy, descriptio
       <ul>
         <li><h4>Malta:</h4></li> 
           <ol>${ingredients.malt
-            .map(elem => {
-              return `<li>${elem.name}(${elem.amount.value} ${elem.amount.unit})</li>`; })
-            .join('')}
+    .map(elem => {
+      return `<li>${elem.name}(${elem.amount.value} ${elem.amount.unit})</li>`;
+    })
+    .join('')}
           </ol>
         <li><h4>Lúpulo:</h4></li> 
           <ol>${ingredients.hops
-            .map(elem => {
-              return `<li>${elem.name}(${elem.amount.value} ${elem.amount.unit}) 
-              añadido: ${elem.add}, atributo: ${elem.attribute}</li>`;})
-            .join('')}
+    .map(elem => {
+      return `<li>${elem.name}(${elem.amount.value} ${elem.amount.unit}) 
+              añadido: ${elem.add}, atributo: ${elem.attribute}</li>`;
+    })
+    .join('')}
           </ol>
       </ul>  
       <li><h3>Precio: ${price}€</h3></li>
@@ -43,5 +45,6 @@ const mainSection = document.querySelector('main');
 
 //pinta los detalles de la cerveza que le hemos pasado
 const renderDetail = data => mainSection.innerHTML = templateShow(data);
+
 
 export { renderDetail };

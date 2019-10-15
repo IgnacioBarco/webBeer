@@ -5,6 +5,7 @@ import { renderDetail } from './showDetails.js';
 import locStorage from './locStorage.js';
 
 
+
 const { getBeers } = api();
 const { getDetails } = api();
 const { addLike } = api();
@@ -16,7 +17,8 @@ page('/', async () => {
     //obtenemos la lista entera de las cervezas y la pintamos
     const data = await getBeers();
     renderList(data);
-    
+
+
 });
 
 page('/detail/:id', async ctx => {
@@ -37,6 +39,7 @@ page('/detail/:id', async ctx => {
         await addLike(id);
 
     });
+
 
 });
 

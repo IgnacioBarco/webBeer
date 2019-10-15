@@ -1,6 +1,21 @@
 
 import api from './api.js';
 
+const imageHeader = `
+<picture>
+        <source
+          srcset="
+            ./src/images/beer640.jpg   400w,
+            ./src/images/beer1280.jpg  800w,
+            ./src/images/beer1920.jpg 1600w
+          "
+          media="(min-width: 640px)"
+        />
+        <img class="imagen" src="./src/images/beer640.jpg" alt="beer" />
+      </picture>
+
+`;
+
 const templateShow = ({ beerId, brewersTips, comments, contributedBy, description, firstBrewed,
   image, ingredients, likes, name, price }) =>
   ` 
@@ -25,11 +40,15 @@ const templateShow = ({ beerId, brewersTips, comments, contributedBy, descriptio
     
 `;
 
-const beerList = document.querySelector('.beerList');
+
+// const beerList = document.querySelector('.beerList');
+const beerList = document.querySelector('main');
 
 //pinta una lista que le pasamos
 const renderList = (data) => {
-  beerList.innerHTML = '';
+  //incluimos la imagen del home
+  beerList.innerHTML = imageHeader;
+
   const formatData = data.map(elem => {
     beerList.innerHTML += templateShow(elem);
 
@@ -52,7 +71,7 @@ const renderListLimited = (data) => {
 //pinta que no ha habido resultado en la búsqueda
 const renderListNoResults = () => {
   beerList.innerHTML = `<h1 class="no-results">No hay resultados</h1>`;
-  
+
 }
 
 export { renderList, renderListLimited, renderListNoResults };
