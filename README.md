@@ -1,33 +1,38 @@
 # webBeer
-
-La parte del HTML y CSS no me ha dado tiempo a mejorarla, está muy básica.
-He añadido la función del like, pero del comment no he podido.
-La página de inicio la he dejado que liste todas las cervezas, y cuando hace la busqueda por
-    filtro la he limitado a 10 resultados.
-El filtro de la fecha esta hecho seleccionando el mes y año, ignora el dia. Y solo saca los
-    que coinciden con la fecha.    
+* La parte del HTML y CSS es solo funcional.
+* Se ha añadido la función de dar like a las cervezas, pero no la de hacer comentarios.
 
 
+### Descripción de la app:
+* La página de inicio lista todas las cervezas. 
+* Al pulsar sobre una cerveza nos lleva a su detalle, donde podremos dar al botón de like.
+* Si pulsamos el "logo", nos lleva de nuevo al index.
+* Los filtros se quedan guardados en localStorage.
 
 
+### Usando los filtros:
+* Cuando hace una busqueda por filtro se limita a pintar 10 resultados.
+* El filtro de la fecha selecciona el mes y año, ignorando el día. Pinta los que coinciden con ese mes y año. 
+* Si los filtros estan vacios y se da al botón de buscar, lista de nuevo todas las cervezas.    
 
 
+### Modulos añadidos
+| Plugin | Modo | Ruta/Comando |
+| ------ | ------ | ------ |
+| http-server | NPM | npm i --save-dev http-server |
+| page | CDN | https://cdn.rawgit.com/visionmedia/page.js/master/page.js |
+| express| NPM | npm i --save express |
 
 
+### Para ejecutar la app
+```
+npm run server
+```
 
 
+### Para ver la app en el navegador
+* http://localhost:3000/
 
 
-npm init
-
-npm i --save-dev http-server
-    "server": "./node_modules/.bin/http-server . -c-1"
-        npm run server
-        http://127.0.0.1:8080/index
-
- <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-
- npm i --save express
-
-doc API:
-    https://web-bootcamp-exercise-beer-swagger-pgjtqotgtl.now.sh/api-docs/#/Beer/get_beers
+### Documentación de la API de cervezas:
+* https://web-bootcamp-exercise-beer-swagger-pgjtqotgtl.now.sh/api-docs/#/Beer/get_beers
