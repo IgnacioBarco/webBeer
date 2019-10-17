@@ -41,14 +41,11 @@ const templateShow = ({ beerId, brewersTips, comments, contributedBy, descriptio
 `;
 
 
-// const beerList = document.querySelector('.beerList');
 const beerList = document.querySelector('main');
 
 //pinta una lista que le pasamos
 const renderList = (data) => {
-  //incluimos la imagen del home
   beerList.innerHTML = imageHeader;
-
   const formatData = data.map(elem => {
     beerList.innerHTML += templateShow(elem);
 
